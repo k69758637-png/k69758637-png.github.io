@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Премиальная электроэпиляция — консультация</title>
+  <meta name="description" content="Премиальная электроэпиляция. Индивидуальный подход, медицинские стандарты, консультация специалиста." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --accent: #c9a24d;
+      --card: #1a1a1a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    h1 { font-size: 48px; margin-bottom: 20px; }
+    h2 { font-size: 32px; margin-bottom: 30px; }
+    p { color: var(--muted); margin-bottom: 20px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--accent);
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 40px;
+      transition: 0.3s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content { max-width: 600px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+    }
+    .steps li {
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+    form {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      background: #2a2a2a;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Навсегда гладкая кожа</h1>
+      <p>Премиальная электроэпиляция с медицинским подходом и индивидуальной консультацией</p>
+      <a href="#form" class="btn">Получить консультацию</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Почему электроэпиляция</h2>
+    <p>Единственный метод удаления волос навсегда. Подходит для всех типов кожи и волос, включая светлые и гормональные.</p>
+    <div class="cards">
+      <div class="card">Работает там, где лазер неэффективен</div>
+      <div class="card">Подходит для лица и деликатных зон</div>
+      <div class="card">Официально признанный метод</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Мой подход</h2>
+    <div class="cards">
+      <div class="card">Индивидуальная консультация</div>
+      <div class="card">Стерильные одноразовые материалы</div>
+      <div class="card">Премиальная атмосфера и комфорт</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Как проходит процедура</h2>
+    <ul class="steps">
+      <li>Консультация и план лечения</li>
+      <li>Подготовка кожи</li>
+      <li>Процедура с контролем ощущений</li>
+      <li>Рекомендации и сопровождение</li>
+    </ul>
+  </section>
+
+  <section id="form">
+    <h2>Запись на консультацию</h2>
+    <form onsubmit="sendWhatsApp(event)">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Телефон / WhatsApp" required>
+      <button class="btn" type="submit">Оставить заявку</button>
+    </form>
+  </section>
+
+  <footer>
+    © Электроэпиляция • Премиальный сервис • Конфиденциальность
+  </footer>
+
+  <script>
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      const name = event.target.querySelector('input[type="text"]').value;
+      const phone = event.target.querySelector('input[type="tel"]').value;
+      const message = `Здравствуйте!%0A%0AИмя: ${name}%0AТелефон: ${phone}%0A%0AХочу записаться на консультацию по электроэпиляции.`;
+      const whatsappNumber = '77473170717';
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
